@@ -1,6 +1,8 @@
 # Devops2022
 
-à retenir : docker run -p 8080:8080 --network appnetwork --name backend backend
+à retenir : 
+docker run -p 8080:8080 --network appnetwork --name backend backend
+docker buid -t backend
 
 1-1 Document your database container essentials: commands and Dockerfile
 - Voir commentaires dans le Database/Dockerfile
