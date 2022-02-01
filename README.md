@@ -6,5 +6,5 @@
 - 02-InsertData.sql : insère des données dans la base de donnée
 
 1-2 Why do we need a multistage build ? And explain each steps of this dockerfile
--
+- Nous devons utiliser un multistage build car nous devons utiliser plusieurs FROM avec des bases différentes, pour n'avoir que les fichiers désirés dans l'image finale
 - Voir commentaires dans le simple-api/Dockerfile
