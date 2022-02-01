@@ -23,3 +23,11 @@ docker push clotilde4923710/database:1.0
 1-3 Document docker-compose most important commands
 1-4 Document your docker-compose file
 - Voir commentaires dans le docker-compose.yml
+- 
+1-5 Document your publication commands and published images in dockerhub
+docker tag database clotilde4923710/database:1.0 //tag l'image database
+docker push clotilde4923710/database:1.0 //push cette l'image database sur dockerhub
+docker tag backend clotilde4923710/backend:1.0 //tag l'image backend
+docker push clotilde4923710/backend:1.0 //push cette l'image backend sur dockerhub
+docker tag httpd clotilde4923710/httpd:1.0 //tag l'image httpd
+docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
