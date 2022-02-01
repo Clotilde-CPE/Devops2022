@@ -3,6 +3,7 @@
 à retenir : 
 docker run -p 8080:8080 --network appnetwork --name backend backend
 docker buid -t backend
+docker-compose up -d
 
 1-1 Document your database container essentials: commands and Dockerfile
 - Voir commentaires dans le Database/Dockerfile
