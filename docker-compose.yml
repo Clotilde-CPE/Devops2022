@@ -1,0 +1,43 @@
+version: '3.3'
+services:
+  backend:
+    build: ./simple-api-main/simple-api
+    #le dockerfile est à l'adresse ./backend
+    
+    #pas de port car on ne doit y accéder que par le httpd
+
+    networks:
+      - appnetwork
+    #le réseau s'appelle appnetwork
+
+    depends_on:
+      - database
+    #httpd ne doit etre ouvert que lorsque database est ouvert
+
+  database:
+    build: ./Database
+    #le dockerfile est à l'adresse ./database
+    
+    #pas de port car on ne doit y accéder que par le httpd
+
+    networks:
+      - appnetwork
+    #le réseau s'appelle appnetwork
+    
+    #database ne depend de personne
+
+  httpd:
+    build: ./proxy
+    #le dockerfile est à l'adresse ./httpd
+    ports:
+      - 80:80
+    #les ports du httpd sont 80:80
+    networks:
+      - appnetwork
+    #le réseau s'appelle appnetwork
+    depends_on:
+      - backend
+    #httpd ne doit etre ouvert que lorsque backend est ouvert
+
+networks:
+  appnetwork:
