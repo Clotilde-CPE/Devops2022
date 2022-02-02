@@ -21,7 +21,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-          cache: maven
 
       #- name: Cache SonarCloud packages
       #  uses: actions/cache@v1
@@ -41,8 +40,7 @@ jobs:
       - name: Build and test with Maven
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=devops-2022 -Dsonar.organization=devops-cpe -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./simple-api-main/simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=Clotilde-CPE_Devops2022 -Dsonar.organization=clotilde-cpe -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./simple-api-main/simple-api/pom.xml
     
   # define job to build and publish docker image
   build-and-push-docker-image:
