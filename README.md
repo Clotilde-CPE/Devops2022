@@ -31,3 +31,6 @@ docker tag backend clotilde4923710/backend:1.0 //tag l'image backend
 docker push clotilde4923710/backend:1.0 //push cette l'image backend sur dockerhub
 docker tag httpd clotilde4923710/httpd:1.0 //tag l'image httpd
 docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
+
+2-1 What are testcontainers?
+Ce sont des librairies Java qui permettent de lancer nombreux conteneurs en essai.
