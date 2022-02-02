@@ -1,7 +1,10 @@
 all:
   vars:
     ansible_user: centos
-    ansible_ssh_private_key_file: /path/to/private/key
+    #user name
+    ansible_ssh_private_key_file: ./../../id_rsa
+    #chemin vers la clé privée
   children:
     prod:
       hosts: clotilde.long.takima.cloud
+      #nom de domaine sur serveur
