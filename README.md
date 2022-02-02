@@ -52,3 +52,11 @@ docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
 
 3-2 Document your playbook
 - voir roles/docker/tasks/main.yml
+
+change 1.0 -> lastest
+rajouter dans httpd.conf :
+<VirtualHost *:80>
+    ProxyPreserveHost On
+    ProxyPass / http://backend:8080/
+    ProxyPassReverse / http://backend:8080/
+</VirtualHost>
