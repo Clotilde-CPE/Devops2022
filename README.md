@@ -34,3 +34,6 @@ docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
 
 2-1 What are testcontainers?
 Ce sont des librairies Java qui permettent de lancer nombreux conteneurs en essai.
+
+2-2 Document your Github Actions configurations
+voir .main.yml
