@@ -49,3 +49,6 @@ docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
 
 3-1 Document your inventory and base commands
 - voir setup.yml
+
+3-2 Document your playbook
+- voir playbook.yml
