@@ -1,6 +1,7 @@
 # Devops2022
 
 Commandes importantes : 
+Docker :
 docker ps / docker ps -a
 docker images
 docker rm -f backend
@@ -10,6 +11,11 @@ docker-compose up -d
 docker-compose ps
 docker tag database clotilde4923710/database:1.0
 docker push clotilde4923710/database:1.0
+Ansible :
+ansible all -i inventories/setup.yml -m ping
+ansible all -i inventories/setup.yml -m setup -a "filter=ansible_distribution*"
+ansible all -i inventories/setup.yml -m yum -a "name=httpd state=absent" --become
+ansible-playbook -i inventories/setup.yml playbook.yml
 
 1-1 Document your database container essentials: commands and Dockerfile
 - voir commentaires dans le Database/Dockerfile
