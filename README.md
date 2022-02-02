@@ -51,4 +51,4 @@ docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
 - voir setup.yml
 
 3-2 Document your playbook
-- voir playbook.yml
+- voir roles/docker/tasks/main.yml
