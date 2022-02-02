@@ -6,7 +6,7 @@ on:
     branches:
     - master
   pull_request:
-
+    types: [opened, synchronize, reopened]
 
 jobs:
   test-backend:
@@ -23,9 +23,26 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+    
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+    
       #build and test the app with the "mvn clean verify" command
       - name: Build and test with Maven
-        run: mvn clean verify --file simple-api-main/simple-api/pom.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Clotilde-CPE_Devops2022 --file ./simple-api-main/simple-api
     
   # define job to build and publish docker image
   build-and-push-docker-image:
@@ -41,7 +58,7 @@ jobs:
       - name: Build image and push backend
         uses: docker/build-push-action@v2
         with:
-        # relative path to the place where source code with Dockerfile is located
+        #relative path to the place where source code with Dockerfile is located
           context: ./simple-api-main/simple-api
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-cpe:simple-api
