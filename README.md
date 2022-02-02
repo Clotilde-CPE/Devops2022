@@ -37,3 +37,5 @@ Ce sont des librairies Java qui permettent de lancer nombreux conteneurs en essa
 
 2-2 Document your Github Actions configurations
 voir .main.yml
+
+2-3 Document your quality gate configuration
