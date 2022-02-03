@@ -26,9 +26,9 @@
       state: present
       #installe docker
 
-  #- name: install python3
-  #  dnf:
-  #    name: python3
+  - name: install python3
+    dnf:
+      name: python3
 
   - name: Pip install
     pip:
