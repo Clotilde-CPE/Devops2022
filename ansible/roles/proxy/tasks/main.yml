@@ -3,8 +3,12 @@
 - name: Run HTTPD
   docker_container:
     name: httpd
+    #nom du conteneur
     image: clotilde4923710/httpd:1.0
+    #chemin et tag de l'image pour créer le conteneur
     networks:
       - name: appnetwork
+      #nom du network
     ports:
       - 80:80
+      #ports du proxy
