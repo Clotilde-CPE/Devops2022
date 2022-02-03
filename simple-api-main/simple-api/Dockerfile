@@ -6,6 +6,7 @@ WORKDIR $MYAPP_HOME
 #ajoute les fichiers nécessaires
 COPY pom.xml .
 COPY src ./src
+RUN mvn dependency:go-offline
 RUN mvn package -DskipTests
 
 
