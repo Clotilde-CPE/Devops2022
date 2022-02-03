@@ -3,6 +3,6 @@
 - name: Run app
   docker_container:
     name: backend
-    image: clotilde4923710/backend:1.0
+    image: clotilde4923710/simple-api:1.0
     networks:
       - name: appnetwork
