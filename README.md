@@ -1,7 +1,7 @@
 # Devops2022
 
 Commandes importantes : 
-- Docker :
+- Docker : 
  - docker ps / docker ps -a
  - docker images
  - docker rm -f backend
