@@ -16,6 +16,8 @@ Commandes importantes :
  - ansible all -i inventories/setup.yml -m setup -a "filter=ansible_distribution*"
  - ansible all -i inventories/setup.yml -m yum -a "name=httpd state=absent" --become
  - ansible-playbook -i inventories/setup.yml playbook.yml
+- Serveur centos
+ - ssh -i ~/chemin/vers/ta/clé/id_rsa centos@clotilde.long.takima.cloud
 - SURPRISE :
  - ssh-keygen -f "/fs03/share/users/clotilde.long/home/.ssh/known_hosts" -R "clotilde.long.takima.cloud"
 
