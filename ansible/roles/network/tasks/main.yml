@@ -3,3 +3,4 @@
 - name: Create a network
   docker_network:
     name: appnetwork
+    #créé un network dont le nom est appnetwork
