@@ -1,6 +1,7 @@
 - hosts: all
   gather_facts: false
-  become: yes  
+  become: yes
+  #yes I want to become a super user
 
   roles:
     - docker
@@ -8,3 +9,4 @@
     - database
     - app
     - proxy
+  #liste de tous les roles
