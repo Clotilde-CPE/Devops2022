@@ -3,6 +3,9 @@
 - name: Run app
   docker_container:
     name: backend
+    #nom du conteneur
     image: clotilde4923710/simple-api:1.0
+    #chemin et tag de l'image pour créer le conteneur
     networks:
       - name: appnetwork
+      #nom du network
