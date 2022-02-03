@@ -60,3 +60,6 @@ rajouter dans httpd.conf :
     ProxyPass / http://backend:8080/
     ProxyPassReverse / http://backend:8080/
 </VirtualHost>
+
+
+ssh-keygen -f "/fs03/share/users/clotilde.long/home/.ssh/known_hosts" -R "clotilde.long.takima.cloud"
