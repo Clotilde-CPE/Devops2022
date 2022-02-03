@@ -1,0 +1,8 @@
+---
+# tasks file for roles/database
+- name: Run database
+  docker_container:
+    name: database
+    image: clotilde4923710/database:1.0
+    networks:
+      - name: appnetwork
