@@ -3,6 +3,9 @@
 - name: Run database
   docker_container:
     name: database
+    #nom du conteneur
     image: clotilde4923710/database:1.0
+    #chemin et tag de l'image pour créer le conteneur
     networks:
       - name: appnetwork
+      #nom du network
