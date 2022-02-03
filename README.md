@@ -16,6 +16,11 @@ Commandes importantes :
  - ansible all -i inventories/setup.yml -m setup -a "filter=ansible_distribution*"
  - ansible all -i inventories/setup.yml -m yum -a "name=httpd state=absent" --become
  - ansible-playbook -i inventories/setup.yml playbook.yml
+- SURPRISE :
+ - ssh-keygen -f "/fs03/share/users/clotilde.long/home/.ssh/known_hosts" -R "clotilde.long.takima.cloud"
+
+Lien site :
+- http://clotilde.long.takima.cloud/departments/IRC/students
 
 1-1 Document your database container essentials: commands and Dockerfile
 - voir commentaires dans le Database/Dockerfile
@@ -53,13 +58,5 @@ docker push clotilde4923710/httpd:1.0 //push cette l'image httpd sur dockerhub
 3-2 Document your playbook
 - voir roles/docker/tasks/main.yml
 
-change 1.0 -> lastest
-rajouter dans httpd.conf :
-<VirtualHost *:80>
-    ProxyPreserveHost On
-    ProxyPass / http://backend:8080/
-    ProxyPassReverse / http://backend:8080/
-</VirtualHost>
-
-
-ssh-keygen -f "/fs03/share/users/clotilde.long/home/.ssh/known_hosts" -R "clotilde.long.takima.cloud"
+3-3 Document your docker_container tasks configuration
+- voir les main.yml dans les tasks des roles
